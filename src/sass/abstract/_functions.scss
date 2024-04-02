@@ -1,0 +1,7 @@
+//
+
+@use "variables" as *;
+
+@function primaryColours($colour-name) {
+    @return map-get($primary-colours, $colour-name)
+};

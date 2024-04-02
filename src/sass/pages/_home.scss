@@ -1,0 +1,19 @@
+@use "../layout" as *;
+@use "../utilities" as *;
+
+//
+
+.hero {
+    width: 100vw;
+    min-height: 90dvh;
+    background-color: rgba(0, 0, 0, .5);
+    color: white;
+    h1 {
+        text-wrap: nowrap; //nowrap for mobile, don't forget
+    }
+    #{&}__content {
+        @include absolute-center();
+    }
+}
+
+//contact form

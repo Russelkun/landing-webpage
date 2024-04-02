@@ -1,0 +1,61 @@
+// position center
+
+@mixin absolute-center() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+// grid-center
+
+@mixin grid-center(){
+    display: grid;
+    place-content: center;
+}
+
+//flex-center
+
+@mixin flex-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//vertical center (up and down)
+
+@mixin position($center) {
+    @if $center == absoluteCenter {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+    }    
+    @else if $center == verticalCenter {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(0, 50%);
+        -webkit-transform: translate(0, 50%);
+        -moz-transform: translate(0, 50%);
+        -ms-transform: translate(0, 50%);
+        -o-transform: translate(0, 50%);
+}
+    @else if $center == gridCenter {
+        display: grid;
+        place-content: center;
+    }
+    @else if $center == flexCenter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

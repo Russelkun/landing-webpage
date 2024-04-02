@@ -1,0 +1,20 @@
+{
+  "name": "landing-webpage",
+  "version": "1.0.0",
+  "description": "xc-runner landing page | responsive webpage",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/html/index.htm",
+    "build": "parcel build src/html/index.htm"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "sass": "^1.72.0"
+  }
+}

@@ -1,0 +1,22 @@
+//
+
+@mixin inputText($input) {
+    
+}
+
+.input-pairs {
+    position: relative;
+    input {
+        @extend .input-pairs;
+        padding: .4em;
+    }
+}
+
+.input-label {
+    position: absolute;
+    inset: 0;
+    top: .5em;
+    left: .5em;
+    pointer-events: none;
+}
+

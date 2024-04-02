@@ -1,0 +1,32 @@
+// video bg
+
+.video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    cursor: pointer;
+    &:hover {
+        background: rgba(0, 0, 0, .9);
+    }
+}
+/*
+.image-bg {
+    max-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    @extend .video-bg;
+    // position: ;
+} */
