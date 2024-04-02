@@ -5,22 +5,21 @@
 @use "../utilities/" as *;
 
 //
+
 header {
     position: relative;
     display: flex;
     justify-content: space-between;
     padding-inline-end: .2em;
-    // width: 100vw;
-    border: 1px solid black;
-    nav {
-        display: none;
-    }
+    // border: 1px solid black;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, .1);
+    height: 20vh;
     img {
         display: flex;
         justify-content: center;
         max-width: 70px;
         margin: auto;
-        //border: 1px solid black;
         transition: all .4s ease-in-out;
         -webkit-transition: all .4s ease-in-out;
         -moz-transition: all .4s ease-in-out;
@@ -32,8 +31,8 @@ header {
         &:hover {
             filter: drop-shadow(1px 4px 4px #00a8f3);
             -webkit-filter: drop-shadow(1px 4px 4px #00a8f3);
-}
-}
+            }
+        }
     a {
         text-decoration: none;
         color: inherit;
@@ -55,49 +54,6 @@ header {
         }
         }
 }
-
-/*
 nav {
-    position: relative;
-    // min-height: 14em;
-    transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    -moz-transition: all .4s ease-in-out;
-    -ms-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    left: -100%;
-    z-index: 10;
-    ul {
-        @include list-reset();
-        @include position(absoluteCenter);
-        display: block;
-        margin: auto;
-        margin-top: 6.5em;
-        background-color: rgba(47, 46, 46, 0.699);
-        width: 100%;
-        text-align: center;
-    }/*
-    li {
-        border: 2px solid black;
-        // min-height: 50px;
-    }
-    a {
-        display: block;
-        padding: .5em 0;
-        color: white;
-    }
-    @include breakpoint(large) {
-        ul {
-            @include flex-center();
-            margin-inline-start: .5em;
-            // gap: 2em;
-            min-height: 100%;
-        }
-        li {
-            // padding: 1em 0;
-            min-width: 120px;
-            padding: .4em .9em;
-        }
-    }
+    display: none;
 }
-*/

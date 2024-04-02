@@ -16,20 +16,9 @@ button {
     -moz-transition: all .4s ease-in-out;
     -ms-transition: all .4s ease-in-out;
     -o-transition: all .4s ease-in-out;
-}
-
-@mixin primary-btn {
-    font-weight: 700;
-    background-color: transparent;
-    color: black;
-    border: 2px solid black;
-    &:focus,
-    &:active {
-        outline: none;
-    }
-    &:hover {
-        background-color: black;
-        color: white;
+    a {
+        text-decoration: none;
+        color: inherit;
     }
 }
 
@@ -41,8 +30,10 @@ button {
 
 // ul, li mixin
 
-@mixin list-reset() {
+@mixin list-reset($list) {
+    @if $list == "nav-list" {
     margin: 0;
     padding: 0;
     list-style: none;
+    }
 }

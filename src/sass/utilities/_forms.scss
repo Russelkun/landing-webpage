@@ -9,13 +9,15 @@
     input {
         @extend .input-pairs;
         padding: .4em;
+        margin-block: .2em;
+        width: 15em;
     }
 }
 
 .input-label {
     position: absolute;
     inset: 0;
-    top: .5em;
+    top: .6999em;
     left: .5em;
     pointer-events: none;
 }
