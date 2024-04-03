@@ -1,39 +1,46 @@
-
-//button mixin
-
-button {
-    width: 120px;
-    height: 30px;
-    border-radius: 0;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    -ms-border-radius: 0;
-    -o-border-radius: 0;
-    border: 2px solid black;
-    background-color: transparent;
-    transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    -moz-transition: all .4s ease-in-out;
-    -ms-transition: all .4s ease-in-out;
-    -o-transition: all .4s ease-in-out;
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
-}
-
-@mixin gradient-btn {
-
-}
-
-
+//
 
 // ul, li mixin
 
 @mixin list-reset($list) {
-    @if $list == "nav-list" {
+    @if $list == "reset-list" {
     margin: 0;
     padding: 0;
     list-style: none;
+    }
+}
+
+//
+// center
+
+@mixin position($center) {
+    @if $center == absoluteCenter {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+    }    
+    @else if $center == verticalCenter {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(0, 50%);
+        -webkit-transform: translate(0, 50%);
+        -moz-transform: translate(0, 50%);
+        -ms-transform: translate(0, 50%);
+        -o-transform: translate(0, 50%);
+}
+    @else if $center == gridCenter {
+        display: grid;
+        place-content: center;
+    }
+    @else if $center == flexCenter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
