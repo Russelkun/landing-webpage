@@ -121,8 +121,9 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 //
 
 console.log("I am connected");
-var navContent = document.querySelector("ul");
-var navBurger = document.querySelector(".burger-nav");
+
+// const navContent = document.querySelector("ul");
+// const navBurger = document.querySelector(".burger-nav");
 },{}],"../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -148,7 +149,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52285" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55802" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

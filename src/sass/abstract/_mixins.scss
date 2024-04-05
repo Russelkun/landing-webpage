@@ -13,7 +13,7 @@
 //
 // center
 
-@mixin position($center) {
+@mixin positionCenter($center) {
     @if $center == absoluteCenter {
         position: absolute;
         top: 50%;

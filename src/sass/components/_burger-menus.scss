@@ -1,6 +1,6 @@
 //
 
-.burger-nav {    
+#nav-burger {    
     cursor: pointer;
     // border: 2px solid black;
     width: fit-content;
@@ -11,8 +11,8 @@
     -moz-transition: all .3s ease-in-out;
     -ms-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
-    height: 70px;
-    margin-block: .4em 0em;
+    // height: 70px;
+    // margin-block: .4em 0em;
     // width: 70px;
     position: relative;
     .bar {
@@ -27,14 +27,21 @@
         -ms-border-radius: 4px;
         -o-border-radius: 4px;
     }
+    .burger-message  {
+        display: flex;
+        display: none;
+    }
 }
 
-.cross-nav {
+.close-nav {
     width:40px;
     height:40px;
     background-color:red;
     position:relative;
     border-radius:6px;
+    float: right;
+    clear: both;
+    cursor: pointer;
     &::before, &::after {
         content:'';
         position:absolute;
