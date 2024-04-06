@@ -159,7 +159,6 @@ img {
 }
 
 form {
-  background-color: #22211f;
   color: white;
 }
 form .fa {
@@ -189,7 +188,7 @@ form ::placeholder {
 }
 
 textarea {
-  border: 1px solid #696e79;
+  border: 2px solid #696e79;
   background-color: #191e29;
   padding: 0.2em 0.5em;
 }
@@ -204,16 +203,17 @@ input, textarea {
 }
 input:focus, input:hover, textarea:focus, textarea:hover {
   outline: none;
-  border: 1px solid #696e79;
+  border: 2px solid #696e79;
 }
 
 textarea {
   margin-block: 0.5em;
+  position: relative;
 }
 
 textarea + .input-label {
-  top: 0.75em;
-  left: 0.75em;
+  top: 0.78em;
+  left: 0.78em;
 }
 
 textarea + .input-label i {
@@ -222,9 +222,10 @@ textarea + .input-label i {
 
 .input-pairs, .input-pairs input {
   position: relative;
+  width: 15em;
 }
 .input-pairs input {
-  border: 1px solid #696e79;
+  border: 2px solid #696e79;
   color: #545550;
   background-color: #191e29;
   padding: 0.4em;
@@ -234,15 +235,20 @@ textarea + .input-label i {
   margin: 0.5em 0.2em;
 }
 
+.input-pairs + .input-label, .input-pairs input + .input-label {
+  top: 0.98em;
+  left: 0.68em;
+}
+
+.input-pairs + .input-fa, .input-pairs input + .input-fa {
+  left: 8em;
+}
+
 .input-label {
   color: #545550;
   position: absolute;
   inset: 0;
-  top: 0.99em;
-  left: 0.65em;
   pointer-events: none;
-  display: flex;
-  justify-content: space-between;
   background-color: inherit;
 }
 .input-label span {
@@ -277,6 +283,13 @@ textarea:focus + .input-label span, textarea:not(:placeholder-shown) + .input-la
 
 textarea:focus + .input-label i, textarea:not(:placeholder-shown) + .input-label i {
   color: transparent;
+}
+
+.img-cover {
+  width: 400px;
+  height: 350px;
+  border: 1px solid brown;
+  display: none;
 }
 
 #FAQ {
@@ -513,7 +526,59 @@ main img {
 }
 
 #message {
-  background-color: #191e29;
+  background-color: #22211f;
+}
+
+#services {
+  margin-block: 0.9em;
+}
+
+.services-intro h3, .services-intro p {
+  margin-block: 0.2em;
+}
+.services-intro p {
+  margin-block: 0.5em 1.3em;
+}
+
+.content-cover {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.box {
+  min-height: 60vh;
+  width: 400px;
+  margin: auto;
+}
+.box h3, .box p, .box button {
+  margin-block: 0.5em;
+  color: black;
+}
+.box h3 {
+  margin-top: 0;
+  padding-top: 0.5em;
+}
+.box .box-content-cover {
+  background-color: #ad8f69;
+}
+.box .box__img {
+  height: 40vh;
+  width: 100%;
+  background: linear-gradient(to right, red, pink);
+  overflow: hidden;
+}
+.box .box__img img {
+  min-width: 100%;
+  min-height: 100%;
+}
+.box .box__content {
+  width: 90%;
+  margin-inline: auto;
+}
+.box .box__button {
+  width: 90%;
+  margin-inline: auto;
 }
 
 /*# sourceMappingURL=/main.31b31d70.css.map */
