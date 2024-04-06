@@ -43,6 +43,11 @@ h6 {
 button {
   cursor: pointer;
   white-space: nowrap;
+  text-transform: uppercase;
+  border: 2px solid black;
+  padding: 0.4em 0.2em;
+  min-width: 150px;
+  background-color: transparent;
 }
 
 input,
@@ -58,10 +63,10 @@ img {
   max-width: 100%;
 }
 
-#nav-burger {
+#burger-nav {
   cursor: pointer;
+  border: 2px solid black;
   width: fit-content;
-  padding: 1.3em 0.6em;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -69,7 +74,7 @@ img {
   -o-transition: all 0.3s ease-in-out;
   position: relative;
 }
-#nav-burger .bar {
+#burger-nav .bar {
   width: 30px;
   height: 4px;
   display: block;
@@ -81,7 +86,7 @@ img {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
 }
-#nav-burger .burger-message {
+#burger-nav .burger-message {
   display: flex;
   display: none;
 }
@@ -136,74 +141,6 @@ img {
   cursor: pointer;
 }
 
-#body-wrapper {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-#body-wrapper img {
-  z-index: -1;
-}
-
-#main-wrapper, .hero {
-  height: 100%;
-  position: relative;
-  display: grid;
-  place-content: center;
-}
-
-#content-wrapper {
-  width: 100%;
-  min-height: 100vh;
-  margin: auto;
-  padding: 1em; /*
-border-radius: 14px;
--webkit-border-radius: 14px;
--moz-border-radius: 14px;
--ms-border-radius: 14px;
--o-border-radius: 14px;
-*/
-}
-@media screen and (min-width: 1024px) {
-  #content-wrapper {
-    background-color: yellow;
-    width: 80%;
-    padding: 0;
-  }
-}
-
-.hero {
-  min-height: 80vh;
-  padding: 1em;
-  width: 100vw;
-  border-bottom: 2px solid white;
-  color: white;
-}
-
-@keyframes textStyle {
-  to {
-    background: linear-gradient(to right, pink, burlywood, purple);
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-  }
-  from {
-    background: linear-gradient(to right, orange, white, black);
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
-  }
-}
-button {
-  background-color: transparent;
-  width: 120px;
-  height: 40px;
-  border: 2px solid;
-  color: inherit;
-  margin-top: 0.5em;
-}
-
 .blurry-bg {
   backdrop-filter: blur(2px);
 }
@@ -225,52 +162,201 @@ button {
   pointer-events: none;
 }
 
-.mobile-nav {
+footer {
+  text-align: center;
+}
+footer a {
+  color: inherit;
+  background-color: transparent;
+  text-decoration: none;
+}
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid white;
+  justify-content: space-evenly;
+  width: 60%;
+  margin: auto;
+}
+
+.copyright span {
+  color: burlywood;
+  font-weight: 700;
 }
 
 .logo {
-  padding-left: 0.5em;
-  border: 2px solid black;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: "Dancing Script", system-ui;
+  margin-top: 4px;
+  margin-left: 4px;
+  margin-bottom: 2px;
+}
+
+#burger-nav {
+  position: absolute;
+  right: 2px;
+  top: 9px;
+}
+
+nav {
+  text-align: center;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.8s ease-in-out;
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -ms-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+}
+nav li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  bordeR: none;
+  border-bottom: 1px solid black;
+}
+nav li:last-child {
+  margin: 0;
+}
+nav li:nth-child(1) {
+  border-top: 1px solid black;
+}
+nav a {
+  padding: 0.5em 0;
+  display: block;
+  height: 100%;
 }
 
 header {
   position: relative;
+  border-bottom: 2px solid black;
+  padding: 0.4em 0;
+  padding-bottom: 0;
 }
-@media screen and (max-device-width: 480px) and (orientation: landscape) {
-  header ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-align: center;
-    position: absolute;
-    top: 40px;
-    width: 70%;
-    right: 10px;
+header a {
+  color: inherit;
+  background-color: transparent;
+  text-decoration: none;
+}
+header .fa {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+/*
+header {
+    @include breakpoint(large) {
+        display: flex;
+        justify-content: space-between;
+        margin-inline: 10em;
+        // padding-bottom: .5em;;
+        .logo {
+            margin: 0;
+        }
+        #burger-nav {
+            display: none;
+        }
+        nav {
+            max-height: 100%;
+            ul {
+                display: flex;
+                gap: 2em;
+            }
+            li {
+                // width: 100px;
+                margin: 0;
+                border: 2px solid transparent;
+                font-size: 1.1em;
+                font-weight: 500;
+                padding: 0;
+                padding-inline: .5em;
+                text-align: center;
+                &:last-child {
+                    padding-right: .2em;
+                }
+                &:hover {
+                    border-bottom-color: burlywood;
+                }
+            }
+            li.active {
+                border-bottom: 2px solid black;
+            }
+            .fa {
+                display: none;
+            }
+            a {
+                padding: 0;
+                padding-bottom: .5em;
+                background-color: transparent !important;
+            }
+        }
+    }
+}
+*/
+.fa {
+  display: grid;
+  place-content: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  color: hotpink;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+.fa-facebook:hover {
+  color: blue;
+}
+
+.fa-whatsapp:hover {
+  color: green;
+}
+
+.fa-instagram:hover {
+  animation: instagram 2s ease infinite;
+  -webkit-animation: instagram 2s ease infinite;
+}
+
+@keyframes instagram {
+  from {
+    color: hotpink;
   }
-  header li {
-    border: 1px solid black;
-    margin: 0.3rem 0;
+  to {
+    color: purple;
   }
-  header li:hover {
-    background-color: grey;
-  }
-  header a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding-block: 0.5em 0.2em;
-  }
+}
+.fa-twitter:hover {
+  color: black;
+}
+
+.fa-envelope:hover {
+  color: red;
 }
 
 /*
 .hero {
-
-}*/
+    min-height: 80dvh;
+    // overflow: hidden;
+    __header {
+        position: relative;
+        height: 70vh;
+        h1 {
+            @include positionCenter(absoluteCenter);
+            text-wrap: nowrap;
+            color: white;
+        }
+    }
+}
+*/
 
 /*# sourceMappingURL=/main.31b31d70.css.map */
