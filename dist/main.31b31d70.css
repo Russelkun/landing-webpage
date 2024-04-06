@@ -141,6 +141,19 @@ img {
   cursor: pointer;
 }
 
+.img-wrapper, .img-wrapper .img-hallow {
+  height: 30em;
+  position: relative;
+  width: 269px;
+}
+.img-wrapper .img-hallow {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  border: 1px solid black;
+  z-index: -1;
+}
+
 .blurry-bg {
   backdrop-filter: blur(2px);
 }
@@ -162,8 +175,37 @@ img {
   pointer-events: none;
 }
 
+#FAQ {
+  text-align: justify;
+}
+
+.accordion-wrapper {
+  border: 1px solid black;
+  margin-bottom: 1em;
+}
+
+.accordion {
+  border-bottom: 1px solid grey;
+}
+.accordion .accordion__header {
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+.accordion .accordion__content {
+  padding: 0.5em;
+  display: none;
+  border-top: 1px solid black;
+}
+
 footer {
+  border-top: 2px solid black;
   text-align: center;
+  padding-block: 0.2em;
+  padding-bottom: 0.9em;
+}
+footer h4 {
+  font-family: "Dancing Script", system-ui;
 }
 footer a {
   color: inherit;
@@ -299,8 +341,8 @@ header {
 .fa {
   display: grid;
   place-content: center;
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -312,51 +354,58 @@ header {
   -moz-transition: all 0.2s ease-in-out;
   -ms-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
+  margin: 0.5em 0.2em;
+  font-size: 1.5em;
+}
+.fa:hover {
+  box-shadow: 0 0 10px rgb(0, 8, 255);
 }
 
 .fa-facebook:hover {
   color: blue;
+  box-shadow: 0 0 10px rgb(0, 8, 255);
 }
 
 .fa-whatsapp:hover {
   color: green;
+  box-shadow: 0 0 10px green;
 }
 
 .fa-instagram:hover {
-  animation: instagram 2s ease infinite;
-  -webkit-animation: instagram 2s ease infinite;
+  box-shadow: 0 0 10px purple;
+  background: -webkit-linear-gradient(hotpink, purple);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @keyframes instagram {
   from {
     color: hotpink;
+    box-shadow: 0 0 10px pink;
   }
   to {
     color: purple;
+    box-shadow: 0 0 10px rgb(221, 0, 255);
   }
 }
 .fa-twitter:hover {
   color: black;
+  box-shadow: 0 0 10px black;
 }
 
 .fa-envelope:hover {
   color: red;
+  box-shadow: 0 0 10px rgb(255, 0, 4);
 }
 
-/*
-.hero {
-    min-height: 80dvh;
-    // overflow: hidden;
-    __header {
-        position: relative;
-        height: 70vh;
-        h1 {
-            @include positionCenter(absoluteCenter);
-            text-wrap: nowrap;
-            color: white;
-        }
-    }
+main {
+  min-height: 100vh;
 }
-*/
+main img {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  object-fit: cover;
+}
 
 /*# sourceMappingURL=/main.31b31d70.css.map */
