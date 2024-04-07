@@ -46,7 +46,11 @@ h6 {
 button {
     cursor: pointer;
     white-space: nowrap;
-    //text-transform: uppercase;
+    text-transform: uppercase;
+    border: 2px solid black;
+    padding: .4em .2em;
+    min-width: 150px;
+    background-color: transparent;
 }
 input,
 button,

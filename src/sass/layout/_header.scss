@@ -3,3 +3,111 @@
 @use "../abstract" as *;
 @use "../components/" as *;
 @use "../utilities/" as *;
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: "Dancing Script", system-ui;
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-bottom: 2px;
+    // padding-bottom: .2em;
+}
+#burger-nav {
+    position: absolute;
+    right: 2px;
+    top: 9px;
+}
+nav {
+    // display: none;
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .8s ease-in-out;
+    -webkit-transition: all .8s ease-in-out;
+    -moz-transition: all .8s ease-in-out;
+    -ms-transition: all .8s ease-in-out;
+    -o-transition: all .8s ease-in-out;
+    li {
+        @include listReset(navList);
+        bordeR: none;
+        border-bottom: 1px solid black;
+        // margin: 2px 0;
+        &:last-child {
+            margin: 0;
+        }
+        &:nth-child(1) {
+            border-top: 1px solid black;
+        }
+    }
+    a {
+        padding: .5em 0;
+        // background-color: burlywood !important;
+        display: block;
+        height: 100%;
+    }
+}
+header {
+    a {
+        @include linkDeco(headerLink);
+    }
+    position: relative;
+    border-bottom: 2px solid black;
+    padding: .4em 0;
+    padding-bottom: 0;
+    .fa {
+        height: 0;
+        width: 0;
+        overflow: hidden;
+    }
+}
+/*
+header {
+    @include breakpoint(large) {
+        display: flex;
+        justify-content: space-between;
+        margin-inline: 10em;
+        // padding-bottom: .5em;;
+        .logo {
+            margin: 0;
+        }
+        #burger-nav {
+            display: none;
+        }
+        nav {
+            max-height: 100%;
+            ul {
+                display: flex;
+                gap: 2em;
+            }
+            li {
+                // width: 100px;
+                margin: 0;
+                border: 2px solid transparent;
+                font-size: 1.1em;
+                font-weight: 500;
+                padding: 0;
+                padding-inline: .5em;
+                text-align: center;
+                &:last-child {
+                    padding-right: .2em;
+                }
+                &:hover {
+                    border-bottom-color: burlywood;
+                }
+            }
+            li.active {
+                border-bottom: 2px solid black;
+            }
+            .fa {
+                display: none;
+            }
+            a {
+                padding: 0;
+                padding-bottom: .5em;
+                background-color: transparent !important;
+            }
+        }
+    }
+}
+*/

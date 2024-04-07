@@ -1,24 +1,155 @@
 //
 
-@mixin inputText($input) {
-    
+@mixin inputVariables($variable) {
+    @if $variable == defaultBorder{
+        border: 2px solid #696e79;
+    }
+    @else if $variable == invalidBorder {
+        border: 2px solid red;
+    }
+    @else if $variable == inputColor {
+        color: #545550;
+    }
+    @else if $variable == backgroundColor {
+        background-color: #191e29;
+    }
+    @else if $variable == inputBackground {
+        background-color: #191e29;
+    }
 }
-
-.input-pairs {
-    position: relative;
-    input {
-        @extend .input-pairs;
-        padding: .4em;
-        margin-block: .2em;
-        width: 15em;
+form {
+    color: white;
+    .fa {
+        height: 10px;
+        width: 10px;
+        position: absolute;
+        right: 9em;
+        top: -.2em;       
+        @include inputVariables(inputColor);
+        font-size: 1em;
+    }
+    button {
+        background-color: #ac8e6a;
+        color: white;
+        border: none;
+        border-radius: 24px;
+        -webkit-border-radius: 24px;
+        -moz-border-radius: 24px;
+        -ms-border-radius: 24px;
+        -o-border-radius: 24px;
+        padding: .6em 0;
+        font-weight: 700;
+        letter-spacing: .018em;
+    }
+    ::placeholder {
+        @include inputVariables(inputColor);
     }
 }
 
-.input-label {
-    position: absolute;
-    inset: 0;
-    top: .6999em;
-    left: .5em;
-    pointer-events: none;
+textarea {
+    @include inputVariables(defaultBorder);
+    @include inputVariables(inputBackground);
+    padding: .2em .5em;
 }
 
+input, textarea {
+    // background-color: #22211f;
+    /*
+    &:required, &:invalid {
+        outline: none;
+        @include inputVariables(invalidBorder);
+    }
+    */
+    &:focus, &:hover {
+        outline: none;
+        @include inputVariables(defaultBorder);
+    }
+}
+textarea {
+    margin-block: .5em;
+    position: relative;
+}
+textarea + 
+.input-label {
+    top: .78em;
+    left: .78em;
+}
+textarea + 
+.input-label i {
+    // top: .75em;
+    left: 16em;
+}
+.input-pairs {
+    position: relative;
+    width: 15em;
+    input {
+        @extend .input-pairs;
+        @include inputVariables(defaultBorder);     
+        @include inputVariables(inputColor);    
+        @include inputVariables(inputBackground);   
+        padding: .4em;
+        width: 15em;
+    }
+    input, textarea {
+        margin: .5em .2em;
+    }
+}
+
+.input-pairs + .input-label {
+    top: .98em;
+    left: .68em;
+}
+.input-pairs + .input-fa {
+    left: 8em;
+}
+
+.input-label {       
+    @include inputVariables(inputColor);
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-color: inherit;
+    span {
+        // @extend .input-label;
+        transition: all .6s ease-in-out;
+        -webkit-transition: all .6s ease-in-out;
+        -moz-transition: all .6s ease-in-out;
+        -ms-transition: all .6s ease-in-out;
+        -o-transition: all .6s ease-in-out;
+    }
+}
+
+input:focus + .input-label span, input:not(:placeholder-shown) + .input-label span {
+    transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -o-transform: translateY(-30px);
+    color: transparent;
+}
+input:focus + .input-label i, input:not(:placeholder-shown) + .input-label i {
+    color: transparent;
+}
+
+textarea:focus + .input-label span, textarea:not(:placeholder-shown) + .input-label span {
+    transform: translateY(-30px);
+    -webkit-transform: translateY(-30px);
+    -moz-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    -o-transform: translateY(-30px);
+    color: transparent;
+}
+
+
+textarea:focus + .input-label i, textarea:not(:placeholder-shown) + .input-label i {
+    color: transparent;
+}
+
+
+//
+.img-cover {
+    width: 400px;
+    height: 350px;
+    border: 1px solid brown;
+    display: none;
+}

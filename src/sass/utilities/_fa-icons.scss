@@ -1,0 +1,70 @@
+@use "../abstract" as *;
+
+.fa {
+    @include positionCenter(gridCenter);
+    // border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    color: hotpink;
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    // box-shadow: 0px 0px 10px black;
+    margin: .5em .2em;
+    font-size: 1.5em;
+    &:hover {
+        box-shadow: 0 0 10px rgb(0, 8, 255);
+    }
+}
+.fa-facebook {
+    &:hover {
+        color: blue;        
+        box-shadow: 0 0 10px rgb(0, 8, 255);
+    }
+}
+.fa-whatsapp {
+    &:hover {
+        color: green;
+        box-shadow: 0 0 10px green;
+    }
+}
+.fa-instagram {
+    &:hover {
+        //animation: name duration timing-function delay iteration-count direction fill-mode;
+        // animation: instagram 2s linear infinite;
+        // -webkit-animation: instagram 2s linear infinite;
+        box-shadow: 0 0 10px purple;
+        background: -webkit-linear-gradient(hotpink, purple);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
+}
+@keyframes instagram {
+    from {
+        color: hotpink;
+        box-shadow: 0 0 10px pink;
+    }
+    to {
+        color: purple;
+        box-shadow: 0 0 10px rgb(221, 0, 255);
+    }
+}
+.fa-twitter {
+    &:hover {
+        color: black;
+        box-shadow: 0 0 10px black;
+    }
+}
+.fa-envelope {
+    &:hover {
+        color: red;
+        box-shadow: 0 0 10px rgb(255, 0, 4);
+    }
+}

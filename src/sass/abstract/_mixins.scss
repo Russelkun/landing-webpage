@@ -2,8 +2,8 @@
 
 // ul, li mixin
 
-@mixin list-reset($list) {
-    @if $list == "reset-list" {
+@mixin listReset($list) {
+    @if $list == "navList" {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -42,5 +42,23 @@
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+}
+
+//links
+
+@mixin linkDeco($a) {
+    @if $a == headerLink {
+        color: inherit;
+        background-color: transparent;
+        text-decoration: none;
+    }
+}
+
+//
+
+@mixin backgroundGradient($stripes) {
+    @if $stripes == repeatingStripes {
+        background: repeating-linear-gradient(-45deg, #fff 0px, burlywood 10px, #fff 10px, burlywood 20px);
     }
 }

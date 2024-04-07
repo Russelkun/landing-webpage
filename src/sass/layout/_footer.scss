@@ -1,1 +1,32 @@
 //
+
+@use "../abstract" as *;
+@use "../components/" as *;
+@use "../utilities/" as *;
+// @use "fa-icons" as *;
+footer {
+    border-top: 2px solid black;
+    text-align: center;
+    padding-block: .2em;
+    padding-bottom: .9em;
+    h4 {
+        font-family: "Dancing Script", system-ui;
+    }
+    a {
+        @include linkDeco(headerLink);
+    }
+
+    ul {
+        @include listReset(navList);
+        display: flex;
+        justify-content: space-evenly;
+        width: 60%;
+        margin: auto;
+    }
+}
+.copyright {
+    span {
+        color: burlywood;
+        font-weight: 700;
+    }
+}
