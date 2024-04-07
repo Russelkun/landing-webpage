@@ -525,8 +525,30 @@ main img {
   object-fit: cover;
 }
 
-#message {
-  background-color: #22211f;
+#hero {
+  position: relative;
+  height: 100dvh;
+  display: grid;
+  place-content: center;
+}
+#hero .hero__intro {
+  text-align: center;
+}
+#hero .hero__intro span.h4 {
+  font-size: 1.75em;
+  font-weight: 300;
+}
+#hero .hero__intro h1, #hero .hero__intro p, #hero .hero__intro button {
+  margin-bottom: 0.5em;
+}
+
+.box-c {
+  display: grid;
+  grid-template-areas: "img1 img1 content" "img2 logo img3";
+}
+.box-c .box-c__item {
+  border: 1px solid black;
+  grid-area: img1;
 }
 
 #services {
@@ -579,6 +601,10 @@ main img {
 .box .box__button {
   width: 90%;
   margin-inline: auto;
+}
+
+#message {
+  background-color: #22211f;
 }
 
 /*# sourceMappingURL=/main.31b31d70.css.map */
