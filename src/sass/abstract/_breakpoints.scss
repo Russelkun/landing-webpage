@@ -25,3 +25,19 @@
         }
     }
 }
+
+//hero content wrapper +600px;
+//header navigation: 768px >
+
+@mixin customBreakpoint($point) {
+    @if $point == heroPoint {
+        @media screen and (width > 600px) {
+            @content;
+        }
+    }
+    @else if $point == headerNav {
+        @media screen and (768px > width > 932px) {
+            @content;
+        }
+    }
+}

@@ -17,7 +17,7 @@
     position: absolute;
     right: 2px;
     top: 9px;
-    @include breakpoint(mediumAbove) {
+    @include customBreakpoint(headerNav) {
         display: none;
     }
 }
@@ -54,7 +54,7 @@ nav {
         display: block;
         height: 100%;
     }
-    @include breakpoint(mediumAbove) {
+    @include customBreakpoint(headerNav) {
         max-height: auto;
         overflow: visible;
         ul {
@@ -68,12 +68,10 @@ nav {
         a {
             padding: .2em 0;
             margin: 0;
-            background-color: red !important
         }
     }
 }
 header {
-    background-color: orange;
     a {
         @include linkDeco(headerLink);
     }
@@ -87,7 +85,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 50;
-    @include breakpoint(mediumAbove) {
+    @include customBreakpoint(headerNav) {
         display: flex;
         justify-content: space-between;
         padding: .7em 4em;

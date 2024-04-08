@@ -5,7 +5,7 @@ html {
 body {
   font-size: 100%;
   font-size: 16px;
-  font-family: "Montserrat", system-ui, sans-serif;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 *,
@@ -294,7 +294,7 @@ textarea:focus + .input-label i, textarea:not(:placeholder-shown) + .input-label
 
 #FAQ {
   text-align: justify;
-  min-width: 400px;
+  max-width: 600px;
   margin: auto;
 }
 #FAQ .fa {
@@ -439,7 +439,7 @@ footer ul {
   right: 2px;
   top: 9px;
 }
-@media screen and (width > 768px) {
+@media screen and (768px > width > 932px) {
   #burger-nav {
     display: none;
   }
@@ -474,7 +474,7 @@ nav a {
   display: block;
   height: 100%;
 }
-@media screen and (width > 768px) {
+@media screen and (768px > width > 932px) {
   nav {
     max-height: auto;
     overflow: visible;
@@ -490,12 +490,10 @@ nav a {
   nav a {
     padding: 0.2em 0;
     margin: 0;
-    background-color: red !important;
   }
 }
 
 header {
-  background-color: orange;
   position: relative;
   border-bottom: 2px solid black;
   padding: 0.4em 0;
@@ -512,7 +510,7 @@ header a {
 header .fa {
   display: none;
 }
-@media screen and (width > 768px) {
+@media screen and (768px > width > 932px) {
   header {
     display: flex;
     justify-content: space-between;
@@ -523,6 +521,7 @@ header .fa {
 section {
   width: 90%;
   margin: 1.5rem auto;
+  position: relative;
 }
 
 #hero {
@@ -534,10 +533,12 @@ section {
   overflow: hidden;
   margin: 0;
   margin-bottom: 1rem;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
 }
 #hero .hero__intro {
   text-align: center;
-  border: 2px solid black;
+  padding-inline: 1em;
 }
 #hero .hero__intro span.h4 {
   font-size: 1.75em;
@@ -545,6 +546,19 @@ section {
 }
 #hero .hero__intro h1, #hero .hero__intro p, #hero .hero__intro button {
   margin-bottom: 0.5em;
+}
+@media screen and (width > 600px) {
+  #hero .hero__intro {
+    width: 80%;
+    margin: auto;
+    height: 60vh;
+    display: grid;
+    place-content: center;
+  }
+  #hero .hero__intro button {
+    width: 120px;
+    margin: auto;
+  }
 }
 
 .article {
@@ -603,14 +617,43 @@ section {
   margin: 0.5em 0;
 }
 
+#about {
+  display: grid;
+  place-content: center;
+}
+
+@media screen and (width > 768px) {
+  .about-wrapper {
+    width: 80%;
+    margin: auto;
+  }
+}
+
 .about {
   display: grid;
   place-content: center;
   margin: 2em auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, auto));
-  grid-auto-rows: minmax(50vh, auto);
+  grid-auto-rows: minmax(60vh, auto);
   overflow: hidden;
+  gap: 0.5em;
+  align-items: center;
+  /*
+  @include customBreakpoint(headerNav) {
+      width: 70%;
+      margin: 2em auto;
+      gap: 2em;        
+      grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+      border: 2px solid black;
+      @include positionCenter(absoluteCenter);
+      .about__content {
+          // max-width: 650px;
+      }
+      .about__img {
+          box-shadow: 4px 1px 4px 4px black;
+      }
+  }*/
 }
 .about span {
   position: absolute;
@@ -628,7 +671,7 @@ section {
 .about .about__img {
   border: 2px solid black;
   position: relative;
-  height: clamp(50vh, 100%, 70vh);
+  height: clamp(60vh, 100%, 70vh);
 }
 .about .about__content {
   line-height: 1.5em;
@@ -642,14 +685,6 @@ section {
 .about .about__content button {
   max-width: 150px;
   margin-top: 0;
-}
-@media screen and (width > 768px) {
-  .about {
-    width: 70%;
-    margin: 2em auto;
-    gap: 2em;
-    grid-template-columns: repeat(auto-fill, minmax(400px, auto));
-  }
 }
 
 .box-c {
@@ -724,6 +759,7 @@ section {
   margin: 0;
   display: flex;
   gap: 1em;
+  justify-content: center;
 }
 #message .img-cover {
   width: 500px;
@@ -737,11 +773,8 @@ section {
   }
 }
 
-@media screen and (max-device-width: 480px) and (orientation: landscape) {
-  .message-form {
-    display: grid;
-    place-content: center;
-  }
+.message-form {
+  border: 1px solid black;
 }
 
 .gallery__header {
@@ -769,7 +802,6 @@ section {
   display: block;
   width: 300px;
   height: 350px;
-  border: 2px solid rgba(0, 0, 0, 0.2705882353);
   overflow: hidden;
   position: relative;
   float: left;
@@ -794,7 +826,7 @@ section {
   position: absolute;
   margin: auto;
   inset: 0;
-  height: 6.5em;
+  height: 3em;
   cursor: pointer;
   text-align: center;
   transition: all 1.2s ease-in-out;
@@ -813,6 +845,7 @@ section {
   padding-top: 4em;
   min-height: 0;
   backdrop-filter: blur(3px);
+  background: linear-gradient(rgba(255, 255, 255, 0.442), rgba(0, 0, 0, 0.426) 20%, rgba(128, 128, 128, 0.453) 55%, rgba(0, 0, 0, 0.486), rgba(255, 255, 255, 0.421));
 }
 .gallery-images .img img {
   transition: all 1.2s ease-in-out;
@@ -849,11 +882,14 @@ section {
   -ms-transform: scale(0.4);
   -o-transform: scale(0.4);
   opacity: 0;
+  text-shadow: 10px 8px 1px rgb(41, 0, 249);
+  font-size: 5rem;
+  color: white;
 }
 .gallery-images .img-cover:hover span span.par,
 .gallery-images .img-cover:focus span span.par {
   opacity: 1;
-  min-height: 50vh;
+  min-height: 55vh;
 }
 
 /*# sourceMappingURL=/main.31b31d70.css.map */
