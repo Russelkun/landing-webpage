@@ -1,0 +1,17 @@
+//
+
+@mixin responsive($point) {
+    @if $point == grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+        grid-auto-rows: minmax(40vh, auto);
+        gap: 1em;
+    }
+    @else if $point == flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1em;
+    }
+}
