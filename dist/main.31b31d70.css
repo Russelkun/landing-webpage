@@ -47,6 +47,7 @@ select,
 textarea, span {
   line-height: 1.5em;
   letter-spacing: 0.04em;
+  font-weight: 500;
 }
 
 button {
@@ -76,18 +77,25 @@ img {
   cursor: pointer;
   border: 2px solid black;
   width: fit-content;
+  padding: 0.4em 0.6em;
+  padding-top: 0.65em;
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   position: relative;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 #burger-nav .bar {
   width: 30px;
   height: 4px;
   display: block;
-  margin: 3px;
+  margin: 3px 0;
   background-color: black;
   border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -440,8 +448,9 @@ footer ul {
 
 #burger-nav {
   position: absolute;
-  right: 2px;
-  top: 9px;
+  inset: 0;
+  left: 85%;
+  right: 0;
 }
 @media screen and (768px > width > 932px) {
   #burger-nav {
@@ -498,6 +507,7 @@ nav a {
 }
 
 header {
+  height: 3em;
   position: relative;
   border-bottom: 2px solid black;
   padding: 0.4em 0;
@@ -553,7 +563,7 @@ section {
 #hero {
   width: 100%;
   position: relative;
-  height: 100dvh;
+  height: 70dvh;
   display: grid;
   place-content: center;
   overflow: hidden;
@@ -745,7 +755,7 @@ section {
 }
 .box .box__img {
   max-height: 40vh;
-  height: 20vh;
+  height: 40vh;
   border: 2px solid black;
   max-width: 300px;
   border-radius: 4px;

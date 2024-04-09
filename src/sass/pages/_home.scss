@@ -11,7 +11,7 @@ section {
 #hero {
     width: 100%;
     position: relative;
-    height: 100dvh;
+    height: 70dvh;
     @include positionCenter(gridCenter);
     overflow: hidden;
     margin: 0;
@@ -186,7 +186,7 @@ section {
     overflow: hidden;
     #{&}__img {
         max-height: 40vh;
-        height: 20vh;
+        height: 40vh;
         border: 2px solid black;
         max-width: 300px;
         // width: clamp(300px, 2vw, 400px);
@@ -196,6 +196,9 @@ section {
         -ms-border-radius: 4px;
         -o-border-radius: 4px;
         margin: 1em auto;
+        // @include breakpoint(mediumAbove) {
+        //     height: 20vh
+        // }
     }
     .box-content-cover {
         max-width: 350px;

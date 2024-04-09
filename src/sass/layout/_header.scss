@@ -15,8 +15,10 @@
 }
 #burger-nav {
     position: absolute;
-    right: 2px;
-    top: 9px;
+    inset: 0;
+    left: 85%;
+    right: 0;
+    // top: 9px;
     @include customBreakpoint(headerNav) {
         display: none;
     }
@@ -72,6 +74,7 @@ nav {
     }
 }
 header {
+    height: 3em;
     a {
         @include linkDeco(headerLink);
     }
