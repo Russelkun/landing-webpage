@@ -82,12 +82,32 @@ header {
     .fa {
         display: none;
     }
-    position: sticky;
-    top: 0;
     z-index: 50;
     @include customBreakpoint(headerNav) {
         display: flex;
         justify-content: space-between;
         padding: .7em 4em;
+    }
+    @media screen and (width < 900px) {
+        position: sticky;
+        top: 0;
+        /*
+        nav { 
+            max-height: auto;
+            overflow: visible;
+            ul {
+                display: flex;
+                gap: 1em;
+            }
+            li {
+                border: 1px solid black;
+                width: 120px;
+            }
+            a {
+                padding: .2em 0;
+                margin: 0;
+            }
+        }
+        */
     }
 }

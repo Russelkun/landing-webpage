@@ -220,17 +220,22 @@ input:focus, textarea:focus {
   background-color: black !important;
 }
 
+textarea {
+  width: 100%;
+  height: 100px;
+}
+
 textarea + .input-label {
-  top: 0.75em !important;
+  top: 0.68em !important;
   left: 0.8em !important;
 }
 
 textarea + .input-label i {
-  left: 17em;
+  left: 12.7em;
 }
 
 .input-pairs .input-label {
-  top: 0.95em;
+  top: 0.88em;
   left: 0.7em;
 }
 
@@ -248,7 +253,6 @@ textarea + .input-label i {
   color: #545550;
   background-color: #191e29;
   padding: 0.4em;
-  width: 15em;
 }
 
 .input-label {
@@ -498,8 +502,6 @@ header {
   border-bottom: 2px solid black;
   padding: 0.4em 0;
   padding-bottom: 0;
-  position: sticky;
-  top: 0;
   z-index: 50;
 }
 header a {
@@ -515,6 +517,30 @@ header .fa {
     display: flex;
     justify-content: space-between;
     padding: 0.7em 4em;
+  }
+}
+@media screen and (width < 900px) {
+  header {
+    position: sticky;
+    top: 0;
+    /*
+    nav { 
+        max-height: auto;
+        overflow: visible;
+        ul {
+            display: flex;
+            gap: 1em;
+        }
+        li {
+            border: 1px solid black;
+            width: 120px;
+        }
+        a {
+            padding: .2em 0;
+            margin: 0;
+        }
+    }
+    */
   }
 }
 
@@ -549,9 +575,9 @@ section {
 }
 @media screen and (width > 600px) {
   #hero .hero__intro {
-    width: 80%;
+    max-width: 80%;
     margin: auto;
-    height: 60vh;
+    min-height: 60vh;
     display: grid;
     place-content: center;
   }
@@ -574,9 +600,18 @@ section {
 }
 
 .cool-numbers {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1em;
   text-align: center;
+}
+@media screen and (width > 500px) {
+  .cool-numbers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .cool-numbers .number span {
   display: block;
@@ -611,10 +646,15 @@ section {
   -o-border-radius: 34px;
   width: 300px;
   display: flex;
-  gap: 1em;
+  gap: 1.2em;
   align-items: center;
   padding: 0.3em 1em;
   margin: 0.5em 0;
+}
+.circle-oval .fa {
+  width: 28px;
+  height: 28px;
+  padding: 0.5em;
 }
 
 #about {
@@ -639,21 +679,6 @@ section {
   overflow: hidden;
   gap: 0.5em;
   align-items: center;
-  /*
-  @include customBreakpoint(headerNav) {
-      width: 70%;
-      margin: 2em auto;
-      gap: 2em;        
-      grid-template-columns: repeat(auto-fit, minmax(400px, auto));
-      border: 2px solid black;
-      @include positionCenter(absoluteCenter);
-      .about__content {
-          // max-width: 650px;
-      }
-      .about__img {
-          box-shadow: 4px 1px 4px 4px black;
-      }
-  }*/
 }
 .about span {
   position: absolute;
@@ -719,10 +744,10 @@ section {
   overflow: hidden;
 }
 .box .box__img {
-  min-height: 40vh;
+  max-height: 40vh;
+  height: 20vh;
   border: 2px solid black;
-  min-width: 300px;
-  width: clamp(300px, 2vw, 400px);
+  max-width: 300px;
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;

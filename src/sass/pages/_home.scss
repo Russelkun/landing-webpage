@@ -2,27 +2,6 @@
 @use "../utilities" as *;
 @use "../abstract/" as *;
 
-@mixin homeVariables($point) {
-    @if $point == width {
-        width: 90%;
-        margin: 1.5rem auto;
-    }
-    @else if $point == border {
-        border: 2px solid black;
-    }
-    @else if $point == transition {
-        transition: all 1.2s ease-in-out;
-        -webkit-transition: all 1.2s ease-in-out;
-        -moz-transition: all 1.2s ease-in-out;
-        -ms-transition: all 1.2s ease-in-out;
-        -o-transition: all 1.2s ease-in-out;
-        // transition-delay: .2s;
-}
-    @else if $point == transitionEase {
-        transition: all 2s;
-        // transition-delay: .4s
-}
-}
 
 section {
     @include homeVariables(width);
@@ -52,9 +31,9 @@ section {
             margin-bottom: .5em;
         }
         @include customBreakpoint(heroPoint) {
-            width: 80%;
+            max-width: 80%;
             margin: auto;
-            height: 60vh;
+            min-height: 60vh;
             @include positionCenter(gridCenter);
             button {
                 width: 120px;
@@ -62,12 +41,6 @@ section {
             }
         }
     }
-    
-    // .hero__img {
-    //     width: 400px;
-    //     height: 400px;
-    //     border: 2px solid black;
-    // }
 }
 
 .article {
@@ -83,9 +56,14 @@ section {
 }
 
 .cool-numbers {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    @include responsive(flex);
     text-align: center;
+    @media screen and (width > 500px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    //
     .number {
         span {
             display: block;
@@ -114,10 +92,15 @@ section {
     -o-border-radius: 34px;
     width: 300px;
     display: flex;
-    gap: 1em;
+    gap: 1.2em;
     align-items: center;
     padding: .3em 1em;
     margin: .5em 0;
+    .fa {
+        width: 28px;
+        height: 28px;
+        padding: .5em;
+    }
 }
 
 //
@@ -164,21 +147,7 @@ section {
             max-width: 150px;
             margin-top: 0;
         }
-    }/*
-    @include customBreakpoint(headerNav) {
-        width: 70%;
-        margin: 2em auto;
-        gap: 2em;        
-        grid-template-columns: repeat(auto-fit, minmax(400px, auto));
-        border: 2px solid black;
-        @include positionCenter(absoluteCenter);
-        #{&}__content {
-            // max-width: 650px;
-        }
-        .about__img {
-            box-shadow: 4px 1px 4px 4px black;
-        }
-    }*/
+    }
 }
 
 //
@@ -216,10 +185,11 @@ section {
     // border: 2px solid black;
     overflow: hidden;
     #{&}__img {
-        min-height: 40vh;
+        max-height: 40vh;
+        height: 20vh;
         border: 2px solid black;
-        min-width: 300px;
-        width: clamp(300px, 2vw, 400px);
+        max-width: 300px;
+        // width: clamp(300px, 2vw, 400px);
         border-radius: 4px;
         -webkit-border-radius: 4px;
         -moz-border-radius: 4px;

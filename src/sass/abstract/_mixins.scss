@@ -62,3 +62,27 @@
         background: repeating-linear-gradient(-45deg, #fff 0px, burlywood 10px, #fff 10px, burlywood 20px);
     }
 }
+
+// variables used in home.scss
+
+@mixin homeVariables($point) {
+    @if $point == width {
+        width: 90%;
+        margin: 1.5rem auto;
+    }
+    @else if $point == border {
+        border: 2px solid black;
+    }
+    @else if $point == transition {
+        transition: all 1.2s ease-in-out;
+        -webkit-transition: all 1.2s ease-in-out;
+        -moz-transition: all 1.2s ease-in-out;
+        -ms-transition: all 1.2s ease-in-out;
+        -o-transition: all 1.2s ease-in-out;
+        // transition-delay: .2s;
+}
+    @else if $point == transitionEase {
+        transition: all 2s;
+        // transition-delay: .4s
+}
+}
